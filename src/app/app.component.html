@@ -1,0 +1,11 @@
+<mat-form-field class="filters-field" appearance="outline" class="basic">
+        <mat-label class="filters-label">Options</mat-label>
+        <mat-select>
+            <input type="text" matInput [matAutocomplete]="auto" [formControl]="myControl">
+            <mat-autocomplete #auto="matAutocomplete">
+                <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+                    {{option}}
+                </mat-option>
+            </mat-autocomplete>
+        </mat-select>
+    </mat-form-field>
